@@ -1,0 +1,45 @@
+{
+	"variables": [],
+	"info": {
+		"name": "RawRequestBody",
+		"_postman_id": "1a4d0ad7-47eb-a674-b396-90d8979efa13",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "json RawRequestBody",
+			"request": {
+				"url": "http://localhost:5000/api/rawrequestbody",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"speakers\": [\n\t{ \"firstname\": \"Ray\",\n\t\t\"lastname\": \"Villalobos\",\n\t\t\"category\": \"Front End\",\n\t\t\"title\": \"Bootstrap & CSS Preprocessors\",\n\t\t\"image\": \"http://barcampdeland.org/images/speaker_rayvillalobos.jpg\",\n\t\t\"link\": \"http://iviewsource.com\",\n\t\t\"bio\": \"Ray Villalobos is a full-time author and teacher at lynda.com. He is author of the book, Exploring Multimedia for Designers. He has more than 20 years experience in developing and programming multimedia projects. Previously at Entravision Communications, he designed and developed a network of radio station and TV web sites. As a senior producer for Tribune Interactive, he was responsible for designing orlandosentinel.com and for creating immersive multimedia projects and Flash games for the site.\",\n\t\t\"description\": \"As responsive design continues to take over the web, front-end developers and designers have turned to preprocessors and layout systems that simplify their workflow. Lynda.com staff author Ray Villalobos will talk about using the Bootstrap framework from Twitter to scaffold and fast track your responsive design. He'll talk about how you can use CodeKit and LESS to put together designs in hours instead of days.\"\n\t}\n]}"
+				},
+				"description": "json:RawRequestBody"
+			},
+			"response": []
+		},
+		{
+			"name": "xml RawRequestBody",
+			"request": {
+				"url": "http://localhost:5000/api/rawrequestbody",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Method",
+						"value": "POST",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\"?>\n<catalog>\n   <book id=\"bk101\">\n      <author>Gambardella, Matthew</author>\n      <title>XML Developer's Guide</title>\n      <genre>Computer</genre>\n      <price>44.95</price>\n      <publish_date>2000-10-01</publish_date>\n      <description>An in-depth look at creating applications \n      with XML.</description>\n   </book>\n   <book id=\"bk102\">\n      <author>Ralls, Kim</author>\n      <title>Midnight Rain</title>\n      <genre>Fantasy</genre>\n      <price>5.95</price>\n      <publish_date>2000-12-16</publish_date>\n      <description>A former architect battles corporate zombies, \n      an evil sorceress, and her own childhood to become queen \n      of the world.</description>\n   </book>\n</catalog>\n"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
