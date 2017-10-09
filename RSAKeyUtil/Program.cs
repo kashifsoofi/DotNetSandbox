@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace RSAKeyUtil
 {
@@ -37,8 +38,8 @@ namespace RSAKeyUtil
                 privateKeyXmlFile.Flush();
 
 				publicKeyFilename = Path.ChangeExtension(publicKeyFilename, "xml");
-				publicKeyXmlFile = File.CreateText(publicKeyXml);
-				publicKeyXmlFile.Write(privateKeyXml);
+				publicKeyXmlFile = File.CreateText(publicKeyFilename);
+				publicKeyXmlFile.Write(publicKeyXml);
 				publicKeyXmlFile.Flush();
 			}
             finally
@@ -172,9 +173,27 @@ namespace RSAKeyUtil
             publicKeyFilename = Path.ChangeExtension(publicKeyFilename, "xml");
             rsaProvider.FromXmlString(File.ReadAllText(publicKeyFilename));
 
-            var exportedFilename = Path.ChangeExtension(publicKeyFilename, "key");
+            var exportedFilename = Path.ChangeExtension(publicKeyFilename, "pub");
             StreamWriter exportedFile = File.CreateText(exportedFilename);
             ExportPublicKey(rsaProvider, exportedFile);
+        }
+
+        private static void EncryptFile(string keyFilename, string inputFilename)
+        {
+            var rsaProvider = new RSACryptoServiceProvider();
+            keyFilename = Path.ChangeExtension(keyFilename, "xml");
+            rsaProvider.FromXmlString(File.ReadAllText(keyFilename));
+
+            var inputText = File.ReadAllText(inputFilename);
+            var inputBytes = Encoding.ASCII.GetBytes(inputText);
+
+            var encryptedBytesWithPadding = rsaProvider.Encrypt(inputBytes, true);
+            var encryptedFilenameWithPadding = Path.ChangeExtension(inputFilename, "enc1");
+            File.WriteAllBytes(encryptedFilenameWithPadding, encryptedBytesWithPadding);
+
+            var encryptedBytes = rsaProvider.Encrypt(inputBytes, false);
+            var encryptedFilename = Path.ChangeExtension(inputFilename, "enc");
+            File.WriteAllBytes(encryptedFilename, encryptedBytesWithPadding);
         }
 
         static void Main(string[] args)
@@ -188,10 +207,16 @@ namespace RSAKeyUtil
                     var publicKeyFilename = args[2];
                     GenerateKeyPair(2048, privateKeyFilename, publicKeyFilename);
                 }
-                else if (command == "-e" || command == "--export")
+                else if (command == "-x" || command == "--export")
                 {
                     var publicKeyFilename = args[1];
                     ExportPublicKey(publicKeyFilename);
+                }
+                else if (command == "-e" || command == "--encrypt")
+                {
+                    var keyFilename = args[1];
+                    var inputFilename = args[2];
+                    EncryptFile(keyFilename, inputFilename);
                 }
 			}
             Console.ReadKey();
