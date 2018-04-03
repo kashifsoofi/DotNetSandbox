@@ -9,6 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutofacSample.Services;
+using System.Runtime.Loader;
+using System.IO;
+using System.Reflection;
 
 namespace AutofacSample
 {
@@ -30,6 +33,14 @@ namespace AutofacSample
             builder.Populate(services);
 
             builder.RegisterModule<ServicesModule>();
+
+            if (Configuration.GetValue<bool>("FakeMode"))
+            {
+                var currentPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                var dynamicAssemblyPath = Path.Combine(currentPath, "AutofacSample.Services.Fakes.dll");
+                var assembly = AssemblyLoadContext.Default.LoadFromAssemblyPath(dynamicAssemblyPath);
+                builder.RegisterAssemblyModules(new[] { assembly });
+            }
 
             var container = builder.Build();
             return new AutofacServiceProvider(container);
