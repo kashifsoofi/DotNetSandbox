@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RawRequestBodySample", "Raw
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSAKeyUtil", "RSAKeyUtil\RSAKeyUtil.csproj", "{432C2A3A-1614-4F90-9A2B-F8A1ACBB1C14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutofacSample.Services", "AutofacSample.Services\AutofacSample.Services.csproj", "{E933F487-1A84-41E0-945D-9F09CC5D1792}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutofacSample", "AutofacSample\AutofacSample.csproj", "{56CAEC0D-5025-4B96-902F-053E08F8F8DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +23,13 @@ Global
 		{432C2A3A-1614-4F90-9A2B-F8A1ACBB1C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{432C2A3A-1614-4F90-9A2B-F8A1ACBB1C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{432C2A3A-1614-4F90-9A2B-F8A1ACBB1C14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E933F487-1A84-41E0-945D-9F09CC5D1792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E933F487-1A84-41E0-945D-9F09CC5D1792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E933F487-1A84-41E0-945D-9F09CC5D1792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E933F487-1A84-41E0-945D-9F09CC5D1792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56CAEC0D-5025-4B96-902F-053E08F8F8DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56CAEC0D-5025-4B96-902F-053E08F8F8DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56CAEC0D-5025-4B96-902F-053E08F8F8DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56CAEC0D-5025-4B96-902F-053E08F8F8DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
