@@ -9,7 +9,7 @@ namespace RawRequestBodySample.Formatters
     {
         public override Boolean CanRead(InputFormatterContext context)
         {
-            return true;
+            return (context.HttpContext.Request.ContentType == "application/json") ? false : true;
         }
 
         public override async Task<InputFormatterResult> ReadRequestBodyAsync(InputFormatterContext context)
