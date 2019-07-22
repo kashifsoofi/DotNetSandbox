@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutofacSample", "AutofacSam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutofacSample.Services.Fakes", "AutofacSample.Services.Fakes\AutofacSample.Services.Fakes.csproj", "{28358F42-1BE0-4AFD-A2E3-4E667CBE55A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoTests", "CryptoTests\CryptoTests.csproj", "{60995CD2-4784-4EBB-A3E5-8A6F77412C0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypto", "Crypto\Crypto.csproj", "{57CE43C9-8363-4A89-8DA2-FF133A1357A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,5 +41,13 @@ Global
 		{28358F42-1BE0-4AFD-A2E3-4E667CBE55A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28358F42-1BE0-4AFD-A2E3-4E667CBE55A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28358F42-1BE0-4AFD-A2E3-4E667CBE55A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60995CD2-4784-4EBB-A3E5-8A6F77412C0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60995CD2-4784-4EBB-A3E5-8A6F77412C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60995CD2-4784-4EBB-A3E5-8A6F77412C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60995CD2-4784-4EBB-A3E5-8A6F77412C0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57CE43C9-8363-4A89-8DA2-FF133A1357A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57CE43C9-8363-4A89-8DA2-FF133A1357A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57CE43C9-8363-4A89-8DA2-FF133A1357A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57CE43C9-8363-4A89-8DA2-FF133A1357A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
