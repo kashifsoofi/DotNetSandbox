@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoTests", "CryptoTests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypto", "Crypto\Crypto.csproj", "{57CE43C9-8363-4A89-8DA2-FF133A1357A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPath2Sample", "XPath2Sample\XPath2Sample.csproj", "{343BD9E2-035D-494B-8ABE-B71FDB341C40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,5 +51,9 @@ Global
 		{57CE43C9-8363-4A89-8DA2-FF133A1357A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57CE43C9-8363-4A89-8DA2-FF133A1357A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57CE43C9-8363-4A89-8DA2-FF133A1357A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{343BD9E2-035D-494B-8ABE-B71FDB341C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{343BD9E2-035D-494B-8ABE-B71FDB341C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{343BD9E2-035D-494B-8ABE-B71FDB341C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{343BD9E2-035D-494B-8ABE-B71FDB341C40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

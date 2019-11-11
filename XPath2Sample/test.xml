@@ -1,0 +1,7 @@
+﻿<s:Envelope xmlns:s="http://www.w3.org/2001/12/soap-envelope" s:encodingStyle="http://www.w3.org/2001/12/soap-encoding">
+    <s:Body xmlns:m ="http://www.xyz.org/todo-list">
+        <m:todo-list>
+            <m:todo-item>abc</m:todo-item>
+        </m:todo-list>
+    </s:Body>
+</s:Envelope>
