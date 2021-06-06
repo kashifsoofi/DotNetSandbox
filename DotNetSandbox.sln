@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoTests", "CryptoTests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypto", "Crypto\Crypto.csproj", "{57CE43C9-8363-4A89-8DA2-FF133A1357A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchHandler", "BatchHandler\BatchHandler.csproj", "{DF095EC7-FBAD-4CF0-B850-D80F9FE5A337}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchClient", "BatchClient\BatchClient.csproj", "{74166C86-1CF0-4320-88E6-78D4E52D54F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,5 +53,13 @@ Global
 		{57CE43C9-8363-4A89-8DA2-FF133A1357A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57CE43C9-8363-4A89-8DA2-FF133A1357A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57CE43C9-8363-4A89-8DA2-FF133A1357A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF095EC7-FBAD-4CF0-B850-D80F9FE5A337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF095EC7-FBAD-4CF0-B850-D80F9FE5A337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF095EC7-FBAD-4CF0-B850-D80F9FE5A337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF095EC7-FBAD-4CF0-B850-D80F9FE5A337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74166C86-1CF0-4320-88E6-78D4E52D54F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74166C86-1CF0-4320-88E6-78D4E52D54F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74166C86-1CF0-4320-88E6-78D4E52D54F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74166C86-1CF0-4320-88E6-78D4E52D54F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
