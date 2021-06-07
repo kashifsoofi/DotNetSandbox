@@ -1,0 +1,7 @@
+﻿<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://www.w3.org/2001/12/soap-encoding">
+    <s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <todo-list xmlns="http://www.xyz.org/todo-list" >
+            <todo-item>abc</todo-item>
+        </todo-list>
+    </s:Body>
+</s:Envelope>
