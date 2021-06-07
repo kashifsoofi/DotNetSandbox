@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c42fdcd0-cd7e-49b2-afb9-20c91113e807" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54816/PingService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PingService.xsd" MetadataType="Schema" ID="3c991f53-189b-4116-a175-df0c9ebcb2fa" SourceId="1" SourceUrl="http://localhost:54816/PingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PingService.wsdl" MetadataType="Wsdl" ID="8265736a-c0c9-4eb8-a5c9-e7ce308fc67e" SourceId="1" SourceUrl="http://localhost:54816/PingService.svc?wsdl" />
+    <MetadataFile FileName="PingService1.xsd" MetadataType="Schema" ID="0cf0d7ce-7b89-431d-abfa-b22c81c34ba2" SourceId="1" SourceUrl="http://localhost:54816/PingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PingService.disco" MetadataType="Disco" ID="4d9a90d2-aff2-4954-9223-f371b66b1e70" SourceId="1" SourceUrl="http://localhost:54816/PingService.svc?disco" />
+    <MetadataFile FileName="PingService2.xsd" MetadataType="Schema" ID="14aed60d-46a3-4fc9-b43d-915ddce6aee2" SourceId="1" SourceUrl="http://localhost:54816/PingService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
