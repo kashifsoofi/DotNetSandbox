@@ -9,11 +9,13 @@
     public class CommunicationSenderService : IHostedService, IDisposable
     {
         private readonly ILogger<CommunicationSenderService> _logger;
+        private readonly IMessageStore _messageStore;
         private Timer _timer;
 
-        public CommunicationSenderService(ILogger<CommunicationSenderService> logger)
+        public CommunicationSenderService(ILogger<CommunicationSenderService> logger, IMessageStore messageStore)
         {
             _logger = logger;
+            _messageStore = messageStore;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
@@ -27,7 +29,13 @@
 
         private void DoWork(object state)
         {
-            _logger.LogInformation("Timed Hosted Service is working. Time: {Time}", DateTime.UtcNow.ToString("yyyyMMddHHmmss"));
+            var messages = _messageStore.GetMessages();
+            _logger.LogInformation("Processing {Count} messages.", messages.Count);
+
+            foreach (var message in messages)
+            {
+                _logger.LogInformation("Message: {Message}", message.Text);
+            }
         }
 
         public Task StopAsync(CancellationToken cancellationToken)

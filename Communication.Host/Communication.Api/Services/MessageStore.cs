@@ -1,23 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using Communication.Api.Models;
-
-namespace Communication.Api.Services
+﻿namespace Communication.Api.Services
 {
+    using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Communication.Api.Models;
+
     public class MessageStore : IMessageStore
     {
+        private readonly ConcurrentQueue<Message> _queue;
+
         public MessageStore()
         {
+            _queue = new ConcurrentQueue<Message>();
         }
 
         public void AddMessage(Message message)
         {
-            throw new NotImplementedException();
+            _queue.Enqueue(message);
         }
 
-        public IEnumerable<Message> GetMessages()
+        public List<Message> GetMessages()
         {
-            throw new NotImplementedException();
+            var messages = _queue.ToArray();
+            _queue.Clear();
+            return messages.ToList();
         }
     }
 }

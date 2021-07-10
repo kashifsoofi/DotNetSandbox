@@ -8,6 +8,6 @@
     {
         void AddMessage(Message message);
 
-        IEnumerable<Message> GetMessages();
+        List<Message> GetMessages();
     }
 }
