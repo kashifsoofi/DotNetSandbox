@@ -20,7 +20,7 @@
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
                 .Enrich.FromLogContext()
                 .WriteTo.Console()
-                .WriteTo.File("Template.Api.log", rollingInterval: RollingInterval.Day)
+                .WriteTo.File("Communication.Api.log", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
 
             CreateHostBuilder(args).Build().Run();

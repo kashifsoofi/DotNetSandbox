@@ -6,11 +6,11 @@
     using MailKit.Net.Smtp;
     using MimeKit;
 
-    public class EmailSender : IEmailSender
+    public class SmtpEmailSender : IEmailSender
     {
         private readonly SmtpOptions _smtpOptions;
 
-        public EmailSender(SmtpOptions smtpOptions)
+        public SmtpEmailSender(SmtpOptions smtpOptions)
         {
             _smtpOptions = smtpOptions;
         }

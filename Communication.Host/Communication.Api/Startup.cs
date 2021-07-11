@@ -48,7 +48,7 @@
             builder.RegisterType<MessageStore>().As<IMessageStore>().SingleInstance();
 
             builder.Register(c => Configuration.GetSection("Smtp").Get<SmtpOptions>()).AsSelf();
-            builder.RegisterType<EmailSender>().As<IEmailSender>().SingleInstance();
+            builder.RegisterType<SmtpEmailSender>().As<IEmailSender>().SingleInstance();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
