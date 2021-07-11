@@ -4,7 +4,8 @@
 	
 @mytag
 Scenario: Send instant email
-	Given I have entered 50 into the calculator
-	And I have entered 70 into the calculator
-	When I press add
-	Then the result should be 120 on the screen
+	Given following message values
+		| To   | integration.test@mailtrap.io |
+		| Text | Email acceptance test        |
+	When the client posts the inputs to send endpoint
+	Then an Ok status should be returned
