@@ -50,6 +50,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Communication.Api", "Commun
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Communication.Host", "Communication.Host\Communication.Host.csproj", "{8E244A03-C76E-4B55-ABC0-A7AC666CFFEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Communication.Api.Tests.Acceptance", "Communication.Api.Tests.Acceptance\Communication.Api.Tests.Acceptance.csproj", "{19A042D9-7487-4554-A0E5-F553FF01038D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -120,6 +122,10 @@ Global
 		{8E244A03-C76E-4B55-ABC0-A7AC666CFFEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E244A03-C76E-4B55-ABC0-A7AC666CFFEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E244A03-C76E-4B55-ABC0-A7AC666CFFEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19A042D9-7487-4554-A0E5-F553FF01038D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19A042D9-7487-4554-A0E5-F553FF01038D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19A042D9-7487-4554-A0E5-F553FF01038D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19A042D9-7487-4554-A0E5-F553FF01038D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -141,6 +147,7 @@ Global
 		{C2F3F01F-A5A3-4C74-8F7F-4CFD658DF0E2} = {7B7415FF-DBEE-4F52-8BF3-5944229E3EDC}
 		{021E4B67-0836-47C5-B78C-D1EF3D4958F7} = {94FD3775-7BE4-4EAE-B3C7-343BADFBCF3C}
 		{8E244A03-C76E-4B55-ABC0-A7AC666CFFEB} = {94FD3775-7BE4-4EAE-B3C7-343BADFBCF3C}
+		{19A042D9-7487-4554-A0E5-F553FF01038D} = {94FD3775-7BE4-4EAE-B3C7-343BADFBCF3C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3D81C62A-24C6-4372-92CA-7B3BFD87CCC7}
