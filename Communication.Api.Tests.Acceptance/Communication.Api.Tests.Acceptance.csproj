@@ -19,11 +19,13 @@
     </PackageReference>
     <PackageReference Include="SpecFlow" Version="3.9.8" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.8" />
+    <PackageReference Include="SpecFlow.xUnit" Version="3.9.8" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="SpecFlow" />
     <None Remove="SpecFlow.Tools.MsBuild.Generation" />
+    <None Remove="SpecFlow.xUnit" />
   </ItemGroup>
   <ItemGroup>
     <None Update="SendEmail.feature">
