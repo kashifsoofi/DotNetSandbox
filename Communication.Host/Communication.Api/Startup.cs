@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Threading.Tasks;
     using Autofac;
+    using Communication.Api.Config;
     using Communication.Api.Services;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -45,6 +46,9 @@
             builder.RegisterType<CommunicationSenderService>().As<IHostedService>();
 
             builder.RegisterType<MessageStore>().As<IMessageStore>().SingleInstance();
+
+            builder.Register(c => Configuration.GetSection("Smtp").Get<SmtpOptions>()).AsSelf();
+            builder.RegisterType<EmailSender>().As<IEmailSender>().SingleInstance();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

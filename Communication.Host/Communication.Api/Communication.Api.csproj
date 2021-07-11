@@ -13,6 +13,8 @@
     <None Remove="Services\" />
     <None Remove="Swashbuckle.AspNetCore" />
     <None Remove="Models\" />
+    <None Remove="Config\" />
+    <None Remove="MailKit" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Serilog.Extensions.Hosting" Version="4.1.2" />
@@ -21,9 +23,11 @@
     <PackageReference Include="Autofac" Version="6.2.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+    <PackageReference Include="MailKit" Version="2.13.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Models\" />
+    <Folder Include="Config\" />
   </ItemGroup>
 </Project>

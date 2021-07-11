@@ -10,12 +10,17 @@
     {
         private readonly ILogger<CommunicationSenderService> _logger;
         private readonly IMessageStore _messageStore;
+        private readonly IEmailSender _emailSender;
         private Timer _timer;
 
-        public CommunicationSenderService(ILogger<CommunicationSenderService> logger, IMessageStore messageStore)
+        public CommunicationSenderService(
+            ILogger<CommunicationSenderService> logger,
+            IMessageStore messageStore,
+            IEmailSender emailSender)
         {
             _logger = logger;
             _messageStore = messageStore;
+            _emailSender = emailSender;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
@@ -34,7 +39,7 @@
 
             foreach (var message in messages)
             {
-                _logger.LogInformation("Message: {Message}", message.Text);
+                _emailSender.Send(message);
             }
         }
 
