@@ -1,4 +1,4 @@
-﻿namespace Communication.Api.Models
+﻿namespace Communication.Contracts.Requests
 {
     using System;
 

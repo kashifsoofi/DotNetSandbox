@@ -3,6 +3,7 @@
     using System;
     using Communication.Api.Models;
     using Communication.Api.Services;
+    using Communication.Contracts.Requests;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
 
