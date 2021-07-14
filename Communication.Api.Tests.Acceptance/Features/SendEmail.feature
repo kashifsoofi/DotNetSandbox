@@ -1,11 +1,11 @@
-﻿Feature: Messages
+﻿Feature: SendEmail
 	In order to keep users updated
 	I want to send email to user
 	
 @mytag
 Scenario: Send instant email
 	Given following message values
-		| To   | integration.test@mailtrap.io |
-		| Text | Email acceptance test        |
+		| To						   | Text				   |
+		| integration.test@mailtrap.io | Email acceptance test |
 	When the client posts the inputs to send endpoint
-	Then an Ok status should be returned
+	Then the result should be true

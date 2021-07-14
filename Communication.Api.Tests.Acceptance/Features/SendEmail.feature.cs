@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Communication.Api.Tests.Acceptance
+namespace Communication.Api.Tests.Acceptance.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,7 +19,7 @@ namespace Communication.Api.Tests.Acceptance
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class MessagesFeature : object, Xunit.IClassFixture<MessagesFeature.FixtureData>, System.IDisposable
+    public partial class SendEmailFeature : object, Xunit.IClassFixture<SendEmailFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace Communication.Api.Tests.Acceptance
 #line 1 "SendEmail.feature"
 #line hidden
         
-        public MessagesFeature(MessagesFeature.FixtureData fixtureData, Communication_Api_Tests_Acceptance_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public SendEmailFeature(SendEmailFeature.FixtureData fixtureData, Communication_Api_Tests_Acceptance_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace Communication.Api.Tests.Acceptance
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "", "Messages", "\tIn order to keep users updated\n\tI want to send email to user", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "SendEmail", "\tIn order to keep users updated\n\tI want to send email to user", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,7 +81,7 @@ namespace Communication.Api.Tests.Acceptance
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="Send instant email")]
-        [Xunit.TraitAttribute("FeatureTitle", "Messages")]
+        [Xunit.TraitAttribute("FeatureTitle", "SendEmail")]
         [Xunit.TraitAttribute("Description", "Send instant email")]
         [Xunit.TraitAttribute("Category", "mytag")]
         public virtual void SendInstantEmail()
@@ -112,9 +112,9 @@ this.ScenarioInitialize(scenarioInfo);
                 this.ScenarioStart();
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "To",
-                            "integration.test@mailtrap.io"});
+                            "Text"});
                 table1.AddRow(new string[] {
-                            "Text",
+                            "integration.test@mailtrap.io",
                             "Email acceptance test"});
 #line 7
  testRunner.Given("following message values", ((string)(null)), table1, "Given ");
@@ -123,7 +123,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("the client posts the inputs to send endpoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
- testRunner.Then("an Ok status should be returned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the result should be true", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -136,12 +136,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                MessagesFeature.FeatureSetup();
+                SendEmailFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                MessagesFeature.FeatureTearDown();
+                SendEmailFeature.FeatureTearDown();
             }
         }
     }
