@@ -1,16 +1,15 @@
 ﻿namespace Communication.Api.Tests.Acceptance
 {
     using BoDi;
+    using Communication.Api.Tests.Acceptance.ApiClients;
+    using Communication.Api.Tests.Acceptance.Helpers;
     using Communication.ApiClient;
     using FluentAssertions;
     using Microsoft.Extensions.Configuration;
     using System;
-    using System.Collections.Generic;
     using System.IO;
-    using System.Linq;
     using System.Net.Http;
     using System.Reflection;
-    using System.Text;
     using System.Threading.Tasks;
     using TechTalk.SpecFlow;
 
@@ -21,6 +20,8 @@
         private readonly ScenarioContext scenarioContext;
 
         private static IConfigurationRoot configurationRoot;
+
+        private static Mail7Configuration mail7Configuration = new Mail7Configuration();
 
         public Hooks(IObjectContainer objectContainer, ScenarioContext scenarioContext)
         {
@@ -42,6 +43,8 @@
                 .AddEnvironmentVariables();
 
             configurationRoot = configurationBuilder.Build();
+
+            configurationRoot.GetSection(nameof(Mail7Configuration)).Bind(mail7Configuration);
         }
 
         [BeforeScenario]
@@ -51,6 +54,15 @@
             {
                 BaseAddress = new Uri(configurationRoot.GetValue<string>("CommunicationApi:BaseUrl")),
             }));
+
+            objectContainer.RegisterInstanceAs(
+                new EmailHelper(new Mail7Client(mail7Configuration)));
+        }
+
+        [AfterScenario]
+        public async Task AfterScenario()
+        {
+            await objectContainer.Resolve<EmailHelper>().CleanUpTrackedEntities(default);
         }
     }
 }

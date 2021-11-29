@@ -40,7 +40,7 @@ namespace Communication.Api.Tests.Acceptance.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "SendEmail", "\tIn order to keep users updated\n\tI want to send email to user", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "SendEmail", "\tIn order to keep users updated\r\n\tI want to send email to user", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -114,7 +114,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "To",
                             "Text"});
                 table1.AddRow(new string[] {
-                            "integration.test@mailtrap.io",
+                            "integration.test@mail7.io",
                             "Email acceptance test"});
 #line 7
  testRunner.Given("following message values", ((string)(null)), table1, "Given ");
@@ -124,6 +124,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 11
  testRunner.Then("the result should be true", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 12
+ testRunner.And("client receives and Email with subject \'Test\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

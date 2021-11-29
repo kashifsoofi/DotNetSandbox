@@ -1,6 +1,9 @@
 ﻿namespace Communication.Api.Tests.Acceptance.Steps
 {
+    using System;
+    using System.Threading;
     using System.Threading.Tasks;
+    using Communication.Api.Tests.Acceptance.Helpers;
     using Communication.ApiClient;
     using Communication.Contracts.Requests;
     using FluentAssertions;
@@ -12,11 +15,13 @@
     {
         private readonly ScenarioContext context;
         private readonly CommunicationApiClient communicationApiClient;
+        private readonly EmailHelper emailHelper;
 
-        public MessagesSteps(ScenarioContext context, CommunicationApiClient communicationApiClient)
+        public MessagesSteps(ScenarioContext context, CommunicationApiClient communicationApiClient, EmailHelper emailHelper)
         {
             this.context = context;
             this.communicationApiClient = communicationApiClient;
+            this.emailHelper = emailHelper;
         }
 
         [Given(@"following message values")]
@@ -24,6 +29,7 @@
         {
             var request = table.CreateInstance<MessageRequest>();
             context.Set(request, "Request");
+            context.Set("ToEmailAddress", request.To);
         }
         
         [When(@"the client posts the inputs to send endpoint")]
@@ -40,5 +46,14 @@
             var result = context.Get<bool>("Result");
             result.Should().Be(expectedResult);
         }
+
+        [Then(@"client receives and Email with subject '(.*)'")]
+        public async Task ThenCleintReceivesAndEmailWithSubject(string subject)
+        {
+            Thread.Sleep(TimeSpan.FromSeconds(60));
+            var emailAddress = context.Get<string>("ToEmailAddress");
+            await emailHelper.VerifyEmailAsync(emailAddress, subject);
+        }
+
     }
 }

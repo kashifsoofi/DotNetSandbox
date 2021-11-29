@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Flurl.Http" Version="3.2.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
@@ -34,7 +35,6 @@
     <None Remove="SpecFlow.Tools.MsBuild.Generation" />
     <None Remove="SpecFlow.xUnit" />
     <None Remove="FluentAssertions" />
-    <None Remove="ApiClients\" />
     <None Remove="Microsoft.Extensions.Configuration.Binder" />
   </ItemGroup>
 
@@ -50,9 +50,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SendEmail.feature.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ApiClients\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Communication.ApiClient\Communication.ApiClient.csproj" />
