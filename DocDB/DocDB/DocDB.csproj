@@ -19,11 +19,15 @@
     <None Remove="Configuration\" />
     <None Remove="Responses\" />
     <None Remove="documents\" />
+    <None Remove="Requests\" />
+    <None Remove="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Configuration\" />
     <Folder Include="Responses\" />
     <Folder Include="documents\" />
+    <Folder Include="Requests\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 </Project>

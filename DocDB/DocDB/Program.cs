@@ -15,6 +15,7 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
     builder.RegisterInstance(databaseConfiguration).AsSelf().SingleInstance();
 
     builder.RegisterType<DocsService>().As<IDocsService>().SingleInstance();
+    builder.RegisterType<QueryParser>().As<IQueryParser>().SingleInstance();
 });
 
 builder.Services.AddControllers();
