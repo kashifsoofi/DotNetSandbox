@@ -6,11 +6,11 @@ namespace DocDB.Services;
 
 public class QueryParser : IQueryParser
 {
-    public Query Parse(string q)
+    public Query Parse(bool skipIndex, string q)
     {
         if (string.IsNullOrWhiteSpace(q))
         {
-            return new Query(new QueryClause[] { });
+            return new Query(skipIndex, new QueryClause[] { });
         }
 
         var clauses = new List<QueryClause>();
@@ -53,7 +53,7 @@ public class QueryParser : IQueryParser
             clauses.Add(clause);
         }
 
-        return new Query(clauses.ToArray());
+        return new Query(skipIndex, clauses.ToArray());
     }
 
     private (string, int, string?) GetToken(string input, int index)

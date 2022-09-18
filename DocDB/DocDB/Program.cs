@@ -25,6 +25,13 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var docsService = scope.ServiceProvider.GetRequiredService<IDocsService>();
+    docsService.ReIndex();
+}
+
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -37,4 +44,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-

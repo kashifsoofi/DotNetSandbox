@@ -28,6 +28,7 @@ public class DocsController : ControllerBase
     public async Task<IActionResult> Post([FromBody] dynamic document, CancellationToken cancellationToken = default)
     {
         var id = Guid.NewGuid().ToString();
+        await _docsService.Index(id, document, cancellationToken);
         await _docsService.Set(id, document, cancellationToken);
 
         return Ok(new ApiResponse(new CreateDocumentResponse(id)));
@@ -48,7 +49,7 @@ public class DocsController : ControllerBase
     [HttpGet(Name = "SearchDocuments")]
     public async Task<IActionResult> Get([FromQuery] SearchDocumentsRequest request, CancellationToken cancellationToken = default)
     {
-        var query = _queryParser.Parse(request.Q);
+        var query = _queryParser.Parse(request.SkipIndex, request.Q);
         var documents = await _docsService.Search(query, cancellationToken);
         return Ok(new ApiResponse(new SearchDocumentsResponse(documents)));
     }

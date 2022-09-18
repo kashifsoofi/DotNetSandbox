@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Text.Json;
+using DocDB.Extensions;
 
 namespace DocDB.Models;
 
 public class Query
 {
-    public Query(QueryClause[] clauses)
+    public Query(bool skipIndex, QueryClause[] clauses)
     {
+        SkipIndex = skipIndex;
         Clauses = clauses;
     }
+
+    public bool SkipIndex { get; }
 
     public QueryClause[] Clauses { get; }
 
@@ -76,12 +80,12 @@ public class Query
         return true;
     }
 
-    private JsonElement? GetPath(dynamic document, string[] parts)
+    private JsonElement? GetPath(dynamic document, string[] parts)  
     {
         var segment = (JsonElement)document;
         foreach (var part in parts)
         {
-            var keyValuePairs = GetDictionary(segment);
+            var keyValuePairs = segment.ToDictionary();
             if (keyValuePairs is not null && !keyValuePairs.ContainsKey(part))
             {
                 return null;
@@ -91,11 +95,6 @@ public class Query
         }
 
         return segment;
-    }
-
-    private Dictionary<string, dynamic>? GetDictionary(JsonElement jsonElement)
-    {
-        return JsonSerializer.Deserialize<Dictionary<string, dynamic>>(jsonElement.GetRawText());
     }
 }
 

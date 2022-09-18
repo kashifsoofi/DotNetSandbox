@@ -5,6 +5,6 @@ namespace DocDB.Services;
 
 public interface IQueryParser
 {
-    Query Parse(string q);
+    Query Parse(bool skipIndex, string q);
 }
 
